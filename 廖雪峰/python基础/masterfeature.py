@@ -1,3 +1,5 @@
+#encoding:utf-8
+
 L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
 
 #三种方式打印前三个数据。

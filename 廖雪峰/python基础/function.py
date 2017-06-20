@@ -1,3 +1,5 @@
+#encoding:utf-8
+
 import math
 
 n1 = 255
