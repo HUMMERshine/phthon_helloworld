@@ -32,8 +32,10 @@ Lisa!'''
 
 print(n,f,s1,s2,s3,s4)
 
-str1 = '中文'.encode('gb2312')
-str2 = '中文'.encode('utf-8')
+# str1 = '中文'.encode('gb2312')
+# str2 = '中文'.encode('utf-8')
+str1 = '中文'
+str2 = '中文'
 print(str1, str2)
 
 height = input('请输入身高：')
