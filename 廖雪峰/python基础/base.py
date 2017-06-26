@@ -68,8 +68,11 @@ d[t] = 1
 #d[t2] = 2
 print(d)
 
-d2 = dict(mike=95, tom=88, jim=77)
+d2 = dict(mike2=95, tom2=88, jim2=77)
 print(d2)
+
+d.update(d2)
+print d
 
 #set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。
 s = set({1, 2, 2, 3, 3, 4})

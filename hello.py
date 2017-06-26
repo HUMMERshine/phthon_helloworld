@@ -5,3 +5,9 @@ def my_range():
         a = i
         print(a)
 
+test_int = 1
+
+if not test_int:
+    print "yes"
+else:
+    print "no"
