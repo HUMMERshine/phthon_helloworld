@@ -87,6 +87,11 @@ for key in d.keys():
 for key in d1.keys():
     print type(key), key
 
+# 校验json字符串
+s = '{abc:12, bcd:13}'
+js = json.loads(s)
+print js
+
 # 序列化对象，直接用json 转换class对象不会成功，需要使用自定义的方法来进行转换
 class Student(object):
     def __init__(self, name, age, score):

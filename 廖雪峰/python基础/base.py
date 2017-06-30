@@ -54,11 +54,22 @@ else:
     print('严重肥胖。')
 
 L = ['bart', 'Lisa', 'Adam']
+(a, b, c) = L# 多个变量同时赋值。
+print a, b, c
 for name in L:
     print('hello, ' + name + '!')
 L.pop(1)
 L.remove('bart')
 print(L)
+print L * 3
+L = '100'
+l = []
+if l:
+    print "l---> empty"
+else:
+    print "l===> empty"
+l.append(L)
+print l
 
 d = {"mike":95, "tom":88, "jim":77}
 print(d)
@@ -84,10 +95,4 @@ s.add(t)
 print(s)
 #s.add(t2)
 print(s)
-
-
-
-
-
-
 
