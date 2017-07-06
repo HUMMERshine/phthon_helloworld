@@ -19,12 +19,14 @@ def main():
         bar('0')
     except StandardError, e:
         logging.info(e)
-        print e
-        logging.exception(e)
+        # print e
+        # logging.exception("output exception") # 向上抛出异常
         print "hello"
 
-main()
-print 'END'
+try:
+    main()
+except StandardError, e:
+    print 'END', e
 
 class myError(StandardError):
     pass
@@ -39,6 +41,7 @@ def fo(s):
 try:
     fo(0)
 except StandardError, e:
+    logging.info(e)
     print e
 
 '''Python内置的try...except...finally用来处理错误十分方便。出错时，会分析错误信息并定位错误发生的代码位置才是最关键的。

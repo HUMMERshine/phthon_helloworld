@@ -87,6 +87,7 @@ print(add_end2())
 #可变参数,函数内部就收到的是一个tuple
 def calc(*numbers):
     sum = 0
+    print "numbers's type is :", type(numbers)
     for n in numbers:
         sum = sum + n * n
     return sum
@@ -109,29 +110,30 @@ person('Jack', 24, **extra)#参数前加**引用字典类型变量。
 
 def person2(name, age, **kw):
     if 'city' in kw:
-        pass
+        print "city"
     if 'job' in kw:
-        pass
+        print "job"
     print('name:', name, 'age:', age, 'other:', kw)
-
-#命名关键字参数：
-def person3(name, age, *, city, job):
-    print(name, age, city, job)
-
-#用*分割参数，*后的参数必须出现在参数里：
-person3('tom', 33, city='beijing', job = 'Engineer')
+print "person2"
+person2('Jack', 24, **extra)
+# #命名关键字参数：
+# def person3(name, age, *, city, job):
+#     print(name, age, city, job)
+#
+# #用*分割参数，*后的参数必须出现在参数里：
+# person3('tom', 33, city='beijing', job = 'Engineer')
 #person3('tom', 33)#缺少后两个参数不对。
 
 #如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符*了：
-def person4(name, age, *args, city, job):
-    print(name, age, args, city, job)
-
-#person4('tom', 33, 'Beijing', 'Engineer')
-#如果有默认参数值，可以省略该参数。
-def person5(name, age, *, city = 'Beijing', job):
-    print(name, age, city, job)
-
-person5('Tom', 44, job = 'Engineer')
+# def person4(name, age, *args, city, job):
+#     print(name, age, args, city, job)
+#
+# #person4('tom', 33, 'Beijing', 'Engineer')
+# #如果有默认参数值，可以省略该参数。
+# def person5(name, age, *, city = 'Beijing', job):
+#     print(name, age, city, job)
+#
+# person5('Tom', 44, job = 'Engineer')
 
 #使用命名关键字参数时，要特别注意，如果没有可变参数，就必须加一个*作为特殊分隔符。如果缺少*，Python解释器将无法识别位置参数和命名关键字参数：
 
@@ -141,11 +143,11 @@ person5('Tom', 44, job = 'Engineer')
 def f1(a, b, c = 0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
-def f2(a, b, c=0, *, d, **kw):
-    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+# def f2(a, b, c=0, *, d, **kw):
+#     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
 f1(1,2)
-f2(1,2,d=99,ext=None)
+#f2(1,2,d=99,ext=None)
 
 args = (1, 2, 3, 4)
 kw = {'d':99, 'x':'#'}
@@ -191,3 +193,11 @@ def move(n, a, b, c):
         move(n-1, b, a, c)
 
 move(4, 'A', 'B', 'C')
+
+
+def testA(*args, **kw):
+    print args, kw
+
+l = [1, 2, 3]
+d = dict(tom=1, jim=2)
+testA(*l, **d)

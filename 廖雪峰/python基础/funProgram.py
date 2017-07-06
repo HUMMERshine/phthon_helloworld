@@ -13,9 +13,9 @@ print(L)
 def f(x):
     return x * x
 
-r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-print(r)
-print(next(r))#r是一个iterator
+r = map(f, (1, 2, 3, 4, 5, 6, 7, 8, 9))
+print type(r), r
+#print(next(r))#r是一个iterator
 print(list(r))
 #reduce函数接受一个函数f和一个序列作为输入，这个函数f必须接受两个参数。
 # reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
@@ -64,34 +64,41 @@ def not_empty(s):
     return s and s.strip()
 
 print(list(filter(not_empty, ['A', '', 'B', None, 'C', '  '])))
-
 #求素数：
-def _odd_iter():
-    n = 1
-    while True:
-        n = n + 2
-        yield n
+def not_prime(x):
+    dividend = range(2, int(x ** 0.5 + 1))
+    return not all(map(lambda t: x % t, dividend))
 
-def _not_divisible(n):
-    return lambda x: x % n > 0#x代表it内的每个元素，lamdba的含义，其实_not_divisible(n)它代表的是函数def(x):x % n > 0;
 
-def primes():
-    yield 2
-    it = _odd_iter() # 初始序列
-    while True:
-        n = next(it) # 返回序列的第一个数
-        yield n
-        it = filter(_not_divisible(n), it) # 构造新序列,第一个参数实际代表def（x）:x % n > 0
-
-for n in primes():
-    if n < 1000:
-        print(n)
-    else:
-        break
+print filter(not_prime, range(2, 101))
+# #求素数：
+# def _odd_iter():
+#     n = 1
+#     while True:
+#         n = n + 2
+#         yield n
+#
+# def _not_divisible(n):
+#     return lambda x: x % n > 0#x代表it内的每个元素，lamdba的含义，其实_not_divisible(n)它代表的是函数def(x):x % n > 0;
+#
+# def primes():
+#     yield 2
+#     it = _odd_iter() # 初始序列
+#     while True:
+#         n = next(it) # 返回序列的第一个数
+#         yield n
+#         it = filter(_not_divisible(n), it) # 构造新序列,第一个参数实际代表def（x）:x % n > 0
+#
+# for n in primes():
+#     if n < 1000:
+#         print(n)
+#     else:
+#         break
 
 #sorted排序,第二个参数key函数，可以对每个元素进行处理
 L = [36, 5, -12, 9, -21]
 print(sorted(L))
+print sorted(L, reverse=True)
 print(sorted(L, key=abs))
 print(sorted(L, key=abs, reverse=True))
 
@@ -113,6 +120,7 @@ L2 = sorted(L, key=by_score)
 print(L2)
 '''end'''
 
+# 返回一个sum函数。
 def lazy_sum(*args):
     def sum():
         ax = 0
@@ -121,9 +129,9 @@ def lazy_sum(*args):
         return ax
     return sum
 
-#f = lazy_sum(1, 2, 3, 4, 5)
-f = lazy_sum(*[1, 2, 3, 4, 5])
-print(f())
+f = lazy_sum(1, 2, 3, 4, 5)
+#f = lazy_sum(*[1, 2, 3, 4, 5])
+print(f()) # 重点在这里。
 
 #闭包，返回函数
 def count():

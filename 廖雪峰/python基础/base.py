@@ -1,7 +1,7 @@
 #encoding:utf-8
 
-print ('I\'m Ok!')
-
+print 'I\'m Ok!'
+print r"I'm Ok !"
 print('\\\t\\')
 print(r'\\\t\\')
 
@@ -21,6 +21,7 @@ print(PI)
 print(7/4)
 print(7//4)
 print(7%4)
+print 7/float(3)
 
 n = 123
 f = 456.789
@@ -38,8 +39,10 @@ str1 = '中文'
 str2 = '中文'
 print(str1, str2)
 
-height = input('请输入身高：')
-weight = input('请输入体重：')
+#height = input('请输入身高：')
+height = 22
+#weight = input('请输入体重：')
+weight = 22
 bmi = float(weight) / (float(height) ** 2)
 
 if bmi < 18.5:
@@ -53,36 +56,41 @@ elif bmi > 28 and bmi <=32:
 else:
     print('严重肥胖。')
 
+res = 'yes' if bmi < 18.5 else 'no'
+print res
+
 L = ['bart', 'Lisa', 'Adam']
 (a, b, c) = L# 多个变量同时赋值。
 print a, b, c
 for name in L:
     print('hello, ' + name + '!')
-L.pop(1)
-L.remove('bart')
-print(L)
-print L * 3
+L.pop(1) # 删除第二个元素
+L.remove('bart') # 移除值为bart的元素
+print(L) #
+print L * 3, '每个元素重复三次'
 L = '100'
 l = []
 if l:
-    print "l---> empty"
+    print "l !---> empty"
 else:
-    print "l===> empty"
+    print "l ---> empty"
 l.append(L)
 print l
 
 d = {"mike":95, "tom":88, "jim":77}
-print(d)
+print(d), "tems返回类型", type(d.items())
+for key, value in d.items():
+    print key, value
 t = (1, 2, 3)#不变对象
 t2 = (1, 2, [1, 2])#不变对象，但是里边的list内容可变，hash不唯一
 d[t] = 1
-#d[t2] = 2
+#d[t2] = 2 # 不可以把 t2当做key放入字典内，因为t2的hash不唯一。
 print(d)
 
 d2 = dict(mike2=95, tom2=88, jim2=77)
 print(d2)
 
-d.update(d2)
+d.update(d2) # 把d2字典数据，加入到d内。
 print d
 
 #set的原理和dict一样，所以，同样不可以放入可变对象，因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。
@@ -95,4 +103,10 @@ s.add(t)
 print(s)
 #s.add(t2)
 print(s)
+print list(s)
 
+s = set((1, 3, 4))
+print s
+
+s = set([1, 3, 5])
+print s
