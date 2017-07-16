@@ -69,7 +69,6 @@ def not_prime(x):
     dividend = range(2, int(x ** 0.5 + 1))
     return not all(map(lambda t: x % t, dividend))
 
-
 print filter(not_prime, range(2, 101))
 # #求素数：
 # def _odd_iter():

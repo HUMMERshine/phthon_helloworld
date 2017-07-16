@@ -29,10 +29,17 @@ print bart.__dict__
 
 
 class Animal(object):
+    def __init__(self):
+        print "Animal init"
+
     def run(self):
         print "Animal is running..."
 
 class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print "Dog init"
+
     def run(self):
         print "Dog is running..."
 

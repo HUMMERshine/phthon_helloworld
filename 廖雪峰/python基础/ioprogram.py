@@ -19,7 +19,8 @@ with open('/Users/lst-bytedance/code/hello.py', 'r') as f:
 
 # 打开非ASCI码的文件要用'rb'模式。
 with open('/Users/lst-bytedance/Desktop/git.jpg', 'rb') as f:
-    print f.read()
+    # print f.read()
+    print "hello"
 
 # 写文件。'a+'不会覆盖，'w'和'w+'会覆盖。
 with open('/Users/lst-bytedance/code/hello.py', 'a+') as f:
@@ -88,7 +89,8 @@ for key in d1.keys():
     print type(key), key
 
 # 校验json字符串
-s = '{abc:12, bcd:13}'
+s = '{"abc":12, "bcd":13}'
+# s = '{\'abc\':12}' 该句不正确，json字符串内只能包含双引号。
 js = json.loads(s)
 print js
 
