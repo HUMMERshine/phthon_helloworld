@@ -104,4 +104,3 @@ s = s + "你好"
 print type('s')
 
 print json.loads("123")
-print json.loads
