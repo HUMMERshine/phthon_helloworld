@@ -98,9 +98,12 @@ print type(json.loads(s))
 s = "123"
 print type('s'), json.loads(s),is_json(s)
 s = 's'
-print type('s'), json.loads(s),is_json(s)
+# print type('s'), json.loads(s),is_json(s)
 print type("你好")
 s = s + "你好"
 print type('s')
 
 print json.loads("123")
+
+a = u'Bl\xe1Bl\xe1Logia'
+print str(s)

@@ -34,13 +34,14 @@ Lisa!'''
 print(n,f,s1,s2,s3,s4)
 
 # str4 = '中文'.decode('gbk')
-str3 = '中文'.decode('utf-8')
-print str3, [str3]
+s = '中文'
+str3 = s.decode('utf-8')
+print s, str3, [str3], type(s) , type(str3)
 str1 = '中文'
 str2 = '中文'
 print str1, str2, type(str1), type(str2), [str1]
 str5 = u'\u4e2d\u6587'
-print str5
+print str5, type(str5)
 
 #height = input('请输入身高：')
 height = 22
@@ -113,3 +114,6 @@ print s
 
 s = set([1, 3, 5])
 print s
+
+u = u"人生苦短"
+print type(u), u.encode('utf-8'), type(u.encode('utf-8'))
