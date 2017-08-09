@@ -107,3 +107,13 @@ print json.loads("123")
 
 a = u'Bl\xe1Bl\xe1Logia'
 print str(s)
+
+a = 123
+print type('a'[::-1]), 'a'[::-1]
+print type(`a`[::-1]), `a`[::-1]
+
+import time
+t = time.time()
+print time.localtime(t)
+print time.gmtime(t)
+print time.strftime('%Y%m%d%H%M%S')

@@ -63,6 +63,7 @@ print('str2float(\'12.3456\') =', str2float('12.3456'))
 def not_empty(s):
     return s and s.strip()
 
+print type(filter(not_empty, ['A', '', 'B', None, 'C', '  ']))
 print(list(filter(not_empty, ['A', '', 'B', None, 'C', '  '])))
 #求素数：
 def not_prime(x):
