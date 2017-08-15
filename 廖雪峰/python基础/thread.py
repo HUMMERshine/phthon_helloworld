@@ -69,10 +69,12 @@ def process_thread(name):
 
 t1 = threading.Thread(target= process_thread, args=('Alice',), name='Thread-A')
 t2 = threading.Thread(target= process_thread, args=('Bob',), name='Thread-B')
+local_school.student = "lst"
 t1.start()
 t2.start()
 t1.join()
 t2.join()
+print local_school.student
 
 # print local_school.student, 该句错误因为在子线程外部（主线程里）没有定义local_school有student属性
 '''ThreadLocal最常用的地方就是为每个线程绑定一个数据库连接，HTTP请求，用户身份信息等，

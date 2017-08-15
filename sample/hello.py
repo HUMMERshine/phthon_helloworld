@@ -117,3 +117,6 @@ t = time.time()
 print time.localtime(t)
 print time.gmtime(t)
 print time.strftime('%Y%m%d%H%M%S')
+
+d = {x:x + 1 for x in range(100)}
+print type(d), d

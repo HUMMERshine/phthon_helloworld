@@ -64,6 +64,7 @@ res = 'yes' if bmi < 18.5 else 'no'
 print res
 
 L = ['bart', 'Lisa', 'Adam']
+print L * 3, '每个元素重复三次'
 (a, b, c) = L# 多个变量同时赋值。
 print a, b, c
 for name in L:
@@ -91,7 +92,7 @@ d[t] = 1
 #d[t2] = 2 # 不可以把 t2当做key放入字典内，因为t2的hash不唯一。
 print(d)
 
-d2 = dict(mike2=95, tom2=88, jim2=77)
+d2 = dict(mike2=97, tom2=88, jim2=77)
 print(d2)
 
 d.update(d2) # 把d2字典数据，加入到d内。
@@ -117,3 +118,10 @@ print s
 
 u = u"人生苦短"
 print type(u), u.encode('utf-8'), type(u.encode('utf-8'))
+xx = 0
+print xx
+def xxx():
+    global xx
+    xx = 1
+xxx()
+print xx
